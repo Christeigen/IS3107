@@ -1,0 +1,161 @@
+/* In your 'assets/styles.css' or inline styles */
+#dashboard-title {
+    font-size: 3rem; /* Larger font size for better visibility */
+    color: #4A90E2; /* A modern, clean blue color */
+    font-weight: 600; /* Slightly less bold for a more elegant feel */
+    text-align: center; /* Center the title for better alignment */
+    margin-top: 30px; /* Give it a bit more breathing room at the top */
+    letter-spacing: 1px; /* Add some spacing between letters for better readability */
+    text-transform: uppercase; /* Transform text to uppercase for a stronger impact */
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+}
+
+#dashboard-title:hover {
+    color: #007BFF; /* Change color when hovering to give interactivity */
+    cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.title-search-container {
+    margin-bottom: 20px;
+}
+/* Style for the Dropdown */
+.search-dropdown {
+    width: 100%; /* Ensure the dropdown takes up full width */
+    padding: 10px 15px; /* Comfortable padding for the input field */
+    font-size: 1.2rem; /* Increase font size for readability */
+    border-radius: 8px; /* Rounded corners for a modern feel */
+    border: 1px solid #ddd; /* Light border color */
+    background-color: #fff; /* White background for clarity */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover/focus effects */
+}
+
+/* Focused State: When the user clicks or focuses on the dropdown */
+.search-dropdown:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #007bff; /* Change border color to a bright blue on focus */
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.4); /* Highlight with a subtle shadow */
+}
+
+/* Hover State: When the user hovers over the dropdown */
+.search-dropdown:hover {
+    border-color: #007bff; /* Change border color when hovered */
+    cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+/* Style for the dropdown menu options */
+.Select-menu-outer {
+    border-radius: 8px; /* Rounded corners for the dropdown list */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Drop shadow for the dropdown list */
+    font-size: 1.1rem; /* Larger font size for better readability */
+}
+
+/* Style for each dropdown option */
+.Select-option {
+    padding: 10px; /* Padding inside each option */
+    transition: background-color 0.3s ease; /* Smooth transition when selecting */
+}
+
+/* Hover effect for dropdown options */
+.Select-option:hover {
+    background-color: #f1f1f1; /* Light background color when hovering */
+    cursor: pointer; /* Pointer cursor to indicate clickable options */
+}
+
+/* Selected option style */
+.Select-option.is-selected {
+    background-color: #007bff; /* Blue background for selected option */
+    color: #fff; /* White text for selected option */
+}
+
+
+.bus-item {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #007bff;
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.bus-item:hover {
+    background-color: #f1f1f1;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+/* Chat container styling */
+.chat-container {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  /* Chat header (title) */
+  .chat-container h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  /* Chat input area */
+  .chat-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    transition: border-color 0.2s ease;
+  }
+  
+  .chat-input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Send button */
+  .chat-send {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .chat-send:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Chat response area */
+  .chat-response {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  
