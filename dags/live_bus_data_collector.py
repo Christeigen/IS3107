@@ -19,9 +19,7 @@ from datetime import datetime, timedelta
 import json
 import redis  # pip install redis
 
-##################################################
 # 1) DAG CONFIG
-##################################################
 default_args = {
     "owner": "airflow",
     "start_date": days_ago(1),
@@ -38,9 +36,7 @@ with DAG(
     description="Collect real-time bus arrival data and store in Redis",
 ) as dag:
 
-    ##################################################
     # 2) TASK: CHECK API HEALTH
-    ##################################################
     check_api_health = HttpSensor(
         task_id="check_api_health",
         http_conn_id="lta_api_connection",  # Must be set in Airflow connections
@@ -50,9 +46,7 @@ with DAG(
         mode="reschedule",
     )
 
-    ##################################################
     # 3) TASK: LOAD BUS STOP CODES FROM bus.db
-    ##################################################
     def load_bus_stop_codes_func(**context):
         """Load all BusStopCode from bus.db (SQLite)."""
         db_path = "/home/houss/airflow/bus.db"
@@ -75,9 +69,7 @@ with DAG(
         provide_context=True,
     )
 
-    ##################################################
     # 4) TASK: GET API KEY
-    ##################################################
     def get_api_key_func(**context):
         """
         Pulls LTA API key from Airflow connection's Extra as 'AccountKey'.
@@ -92,9 +84,7 @@ with DAG(
         provide_context=True,
     )
 
-    ##################################################
     # 5) TASK: FETCH LIVE ARRIVAL DATA
-    ##################################################
     def fetch_live_arrival_data_func(**context):
         """
         For each BusStopCode, call /BusArrivalv2, gather results into a single list.
@@ -132,9 +122,7 @@ with DAG(
         provide_context=True,
     )
 
-    ##################################################
     # 6) TASK: TRANSFORM ARRIVAL DATA
-    ##################################################
     def transform_bus_arrival_data_func(**context):
         """
         Flatten each NextBus / NextBus2 / NextBus3 into separate rows.
@@ -186,9 +174,7 @@ with DAG(
         provide_context=True,
     )
 
-    ##################################################
     # 7) TASK: LOAD DATA INTO REDIS
-    ##################################################
     def load_data_to_redis_func(**context):
         """
         Insert documents into Redis. 
@@ -227,9 +213,7 @@ with DAG(
         provide_context=True,
     )
 
-    ##################################################
     # 8) TASK: LOG COLLECTION SUMMARY
-    ##################################################
     def log_collection_summary_func(**context):
         print("Live bus data collector DAG finished successfully (using Redis)!")
 
@@ -239,9 +223,7 @@ with DAG(
         provide_context=True,
     )
 
-    ##################################################
     # SET DAG DEPENDENCIES
-    ##################################################
     get_api_key >> load_bus_stop_codes >> fetch_live_arrival_data
     fetch_live_arrival_data >> transform_bus_arrival_data
     transform_bus_arrival_data >> load_data_to_redis
