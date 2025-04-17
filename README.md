@@ -48,7 +48,7 @@ Used by `live_bus_data_collector` and the dashboard to store and retrieve live b
 - No Airflow connection needed.
 - SQLite is accessed directly using the file path:
   ```
-  /home/houss/airflow/bus.db
+  /airflow/bus.db
   ```
 
 Make sure the file is created and accessible on your system (it will be created automatically by the `bus_metadata_ingestion` DAG).
