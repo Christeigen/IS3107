@@ -1,0 +1,126 @@
+[2025-04-25T16:29:58.384+0000] {processor.py:186} INFO - Started process (PID=43) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:29:58.389+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:29:58.399+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:29:58.397+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:29:58.845+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:29:59.026+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:29:59.025+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:29:59.073+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:29:59.072+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:20:00+00:00, run_after=2025-04-25 16:25:00+00:00
+[2025-04-25T16:29:59.107+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.742 seconds
+[2025-04-25T16:30:29.280+0000] {processor.py:186} INFO - Started process (PID=109) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:30:29.281+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:30:29.284+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:30:29.283+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:30:29.449+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:30:29.469+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:30:29.468+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:30:29.493+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:30:29.493+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:25:00+00:00, run_after=2025-04-25 16:30:00+00:00
+[2025-04-25T16:30:29.510+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.235 seconds
+[2025-04-25T16:30:59.914+0000] {processor.py:186} INFO - Started process (PID=175) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:30:59.915+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:30:59.917+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:30:59.917+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:31:00.128+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:31:00.148+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:00.147+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:31:00.179+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:00.179+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:25:00+00:00, run_after=2025-04-25 16:30:00+00:00
+[2025-04-25T16:31:00.202+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.294 seconds
+[2025-04-25T16:31:30.264+0000] {processor.py:186} INFO - Started process (PID=241) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:31:30.265+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:31:30.267+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:30.267+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:31:30.488+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:31:30.512+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:30.511+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:31:30.539+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:30.538+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:25:00+00:00, run_after=2025-04-25 16:30:00+00:00
+[2025-04-25T16:31:30.559+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.302 seconds
+[2025-04-25T16:32:00.714+0000] {processor.py:186} INFO - Started process (PID=308) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:32:00.715+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:32:00.717+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:00.717+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:32:00.889+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:32:00.908+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:00.907+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:32:00.934+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:00.933+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:25:00+00:00, run_after=2025-04-25 16:30:00+00:00
+[2025-04-25T16:32:00.954+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.246 seconds
+[2025-04-25T16:32:31.239+0000] {processor.py:186} INFO - Started process (PID=373) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:32:31.240+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:32:31.243+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:31.242+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:32:31.452+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:32:31.473+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:31.472+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:32:31.504+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:31.504+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:25:00+00:00, run_after=2025-04-25 16:30:00+00:00
+[2025-04-25T16:32:31.526+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.293 seconds
+[2025-04-25T16:33:02.383+0000] {processor.py:186} INFO - Started process (PID=439) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:33:02.384+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:33:02.388+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:02.387+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:33:02.625+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:33:02.647+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:02.647+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:33:02.687+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:02.686+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:25:00+00:00, run_after=2025-04-25 16:30:00+00:00
+[2025-04-25T16:33:02.714+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.340 seconds
+[2025-04-25T16:33:33.543+0000] {processor.py:186} INFO - Started process (PID=505) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:33:33.544+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:33:33.546+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:33.546+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:33:33.715+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:33:33.733+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:33.732+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:33:33.755+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:33.755+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:25:00+00:00, run_after=2025-04-25 16:30:00+00:00
+[2025-04-25T16:33:33.775+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.237 seconds
+[2025-04-25T16:34:04.395+0000] {processor.py:186} INFO - Started process (PID=571) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:34:04.396+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:34:04.399+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:04.398+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:34:04.597+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:34:04.619+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:04.618+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:34:04.646+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:04.646+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:25:00+00:00, run_after=2025-04-25 16:30:00+00:00
+[2025-04-25T16:34:04.667+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.279 seconds
+[2025-04-25T16:34:34.926+0000] {processor.py:186} INFO - Started process (PID=637) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:34:34.928+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:34:34.930+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:34.930+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:34:35.127+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:34:35.149+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:35.148+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:34:35.175+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:35.175+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:25:00+00:00, run_after=2025-04-25 16:30:00+00:00
+[2025-04-25T16:34:35.195+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.274 seconds
+[2025-04-25T16:35:05.406+0000] {processor.py:186} INFO - Started process (PID=703) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:35:05.408+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:35:05.411+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:05.411+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:35:05.626+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:35:05.645+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:05.645+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:35:05.675+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:05.674+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:30:00+00:00, run_after=2025-04-25 16:35:00+00:00
+[2025-04-25T16:35:05.698+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.299 seconds
+[2025-04-25T16:35:36.003+0000] {processor.py:186} INFO - Started process (PID=781) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:35:36.007+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:35:36.016+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:36.015+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:35:36.330+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:35:36.368+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:36.367+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:35:36.411+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:36.411+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:35:00+00:00, run_after=2025-04-25 16:40:00+00:00
+[2025-04-25T16:35:36.441+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.451 seconds
+[2025-04-25T16:36:06.723+0000] {processor.py:186} INFO - Started process (PID=847) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:36:06.724+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:36:06.727+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:06.727+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:36:06.897+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:36:06.914+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:06.913+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:36:06.936+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:06.936+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:35:00+00:00, run_after=2025-04-25 16:40:00+00:00
+[2025-04-25T16:36:06.954+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.237 seconds
+[2025-04-25T16:36:37.792+0000] {processor.py:186} INFO - Started process (PID=913) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:36:37.793+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:36:37.796+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:37.795+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:36:38.000+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:36:38.022+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:38.022+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:36:38.053+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:38.053+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:35:00+00:00, run_after=2025-04-25 16:40:00+00:00
+[2025-04-25T16:36:38.077+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.290 seconds
+[2025-04-25T16:37:08.360+0000] {processor.py:186} INFO - Started process (PID=979) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:37:08.361+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:37:08.364+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:08.364+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:37:08.532+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:37:08.549+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:08.549+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:37:08.572+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:08.572+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:35:00+00:00, run_after=2025-04-25 16:40:00+00:00
+[2025-04-25T16:37:08.591+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.237 seconds
+[2025-04-25T16:37:39.337+0000] {processor.py:186} INFO - Started process (PID=1045) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:37:39.338+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:37:39.341+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:39.341+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:37:39.508+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:37:39.527+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:39.526+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:37:39.551+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:39.550+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:35:00+00:00, run_after=2025-04-25 16:40:00+00:00
+[2025-04-25T16:37:39.569+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.237 seconds
+[2025-04-25T16:38:09.922+0000] {processor.py:186} INFO - Started process (PID=1111) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:38:09.923+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:38:09.926+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:09.925+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:38:10.100+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:38:10.118+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:10.117+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:38:10.146+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:10.146+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:35:00+00:00, run_after=2025-04-25 16:40:00+00:00
+[2025-04-25T16:38:10.166+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.249 seconds
+[2025-04-25T16:38:40.313+0000] {processor.py:186} INFO - Started process (PID=1178) to work on /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:38:40.314+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/traffic_images_collector.py for tasks to queue
+[2025-04-25T16:38:40.316+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:40.316+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:38:40.497+0000] {processor.py:925} INFO - DAG(s) 'traffic_images_collector' retrieved from /opt/airflow/dags/traffic_images_collector.py
+[2025-04-25T16:38:40.515+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:40.515+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:38:40.541+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:40.541+0000] {dag.py:4180} INFO - Setting next_dagrun for traffic_images_collector to 2025-04-25 16:35:00+00:00, run_after=2025-04-25 16:40:00+00:00
+[2025-04-25T16:38:40.561+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/traffic_images_collector.py took 0.253 seconds

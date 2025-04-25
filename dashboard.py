@@ -8,7 +8,7 @@ import os
 
 import sqlite3
 from dash.dependencies import MATCH, ALL, State, Output, Input
-from airflow.hooks.base import BaseHook  # For redis connection
+# from airflow.hooks.base import BaseHook  # For redis connection
 import redis
 from datetime import datetime
 import dateutil.parser  # Handy for parsing ISO strings with offset
@@ -17,24 +17,32 @@ from datetime import datetime, timezone
 # --- PydanticAI Agent to Extract Bus Service Number ---
 from pydantic import BaseModel
 from pydantic_ai import Agent
+from supabase import create_client
 
 import dateutil.parser  # Handy for parsing ISO strings with offsets
 
 
-# Set your OpenAI API key (consider using an environment variable for production)
+# Set your API key (consider using an environment variable for production)
 API_KEY= "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"
+SUPABASE_URL= "https://vcyztregkuonlsqmljtt.supabase.co"
+SUPABASE_KEY= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjeXp0cmVna3VvbmxzcW1sanR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0ODIzMDUsImV4cCI6MjA2MTA1ODMwNX0.-0rQ-tyXS8t_4n3sBMibc5VAcEvMIbnqmTeilbWDEKc"
 
-conn = sqlite3.connect('/home/houss/airflow/bus.db')
+conn = sqlite3.connect('bus.db')
 
 # Load data from SQLite
 bus_stops_df = pd.read_sql_query("SELECT * FROM BusStop", conn)
 bus_services_df = pd.read_sql_query("SELECT * FROM BusService", conn)
 bus_routes_df = pd.read_sql_query("SELECT * FROM BusRoute", conn)
 
+# Load data from Supabase
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+df = supabase.table("TrafficImages").select("*").execute()
+df = pd.DataFrame(df.data)
 
 # Connect to Redis and get upcoming bus arrivals
-redis_conn = BaseHook.get_connection("redis_default")
-r = redis.Redis(host=redis_conn.host, port=redis_conn.port, decode_responses=True)
+# redis_conn = BaseHook.get_connection("redis_default")
+# r = redis.Redis(host=redis_conn.host, port=redis_conn.port, decode_responses=True)
+r = redis.Redis(host="localhost", port=6379, decode_responses=True)
 all_redis_items = r.lrange("bus_arrivals", 0, -1)
 # Create dropdown options using bus stop description and code
 bus_stops_list = [{'label': row['Description'], 'value': row['BusStopCode']} for _, row in bus_stops_df.iterrows()]
@@ -51,123 +59,180 @@ app.layout = dbc.Container(
         html.Div(
             [
                 html.H1("Singapore Public Transport Dashboard", id='dashboard-title', className="text-center mb-4"),
-                dcc.Dropdown(
-                    id='bus-stop-search',
-                    options=bus_stops_list,
-                    placeholder="Search for a bus stop...",
-                    searchable=True,
-                    clearable=True,
-                    style={'width': '100%', 'padding': '10px', 'font-size': '1.2rem'},
-                    className='search-dropdown'
-                )
+                dcc.Tabs(id='tabs-example-1', value='tab-1', children=[
+                    dcc.Tab(label='Bus Route', value='tab-1'),
+                    dcc.Tab(label='Traffic Condition', value='tab-2'),
+                ])
             ],
             className="title-search-container"
         ),
-        
-        # Map and Bus Information Panel
-        dbc.Row(
-            [
-                dbc.Col(
-                    dcc.Graph(
-                        id='map',
-                        config={'scrollZoom': True}
-                    ),
-                    width=8
-                ),
-                dbc.Col(
-                    dbc.Card(
-                        dbc.CardBody(
-                            [
-                                html.H4('Upcoming Buses', className="card-title"),
-                                html.Ul(id='bus-list', children=[])
-                            ]
-                        ),
-                    ),
-                    width=4
-                ),
-            ],
-            className="mb-4",
-        ),
-        
-        # Toggle button and collapsible slider/plot section (tap-in/out plots)
-        dbc.Button(
-            "Toggle Tap-in/Out Data",
-            id="collapse-button",
-            color="primary",
-            className="mb-3"
-        ),
-        dbc.Collapse(
-            dbc.Row(
-                [
-                    dbc.Col(
-                        dcc.Slider(
-                            id='tap-in-out-slider',
-                            min=0,
-                            max=6,
-                            step=1,
-                            marks={
-                                0: 'Weekday Tap-in',
-                                1: 'Weekday Tap-out',
-                                2: 'Weekday Comparison',
-                                3: 'Tap-in (Wkday vs Wkend)',
-                                4: 'Tap-out (Wkday vs Wkend)',
-                                5: 'Heatmap',
-                                6: 'Stacked Bar (Wkday)'
-                            },
-                            value=0
-                        ),
-                        width=12
-                    ),
-                    dbc.Col(
-                        dcc.Graph(
-                            id='tap-in-out-plots'
-                        ),
-                        width=12
-                    )
-                ],
-                className="mt-4",
-            ),
-            id="slider-plot-section",
-            is_open=False
-        ),
-        # Stores to track selections
-        dcc.Store(id='selected-bus', data=None),
-        dcc.Store(id='selected-stop', data=None),
-        dcc.Store(id='redis-data-store', data=None),
 
-        dcc.Store(id='filtered-buses', data=bus_services_df.to_dict('records')),
-        dcc.Interval(
-        id='refresh-interval',
-        interval=300000,  # 300,000 ms = 5 minutes
-        n_intervals=0
-    ),
-
-
-        
-        # Chatbot section
-        dbc.Row(
-            dbc.Col(
-                dbc.Card(
-                    dbc.CardBody(
-                        [
-                            html.H4("Bus Info Assistant", className="card-title"),
-                            dcc.Textarea(
-                                id='chat-input',
-                                placeholder='Ask about a bus stop...',
-                                className='chat-input'
+        # Tab 1
+        html.Div(
+            id='tab-1-content',
+            children = [
+                dcc.Dropdown(
+                            id='bus-stop-search',
+                            options=bus_stops_list,
+                            placeholder="Search for a bus stop...",
+                            searchable=True,
+                            clearable=True,
+                            style={'width': '100%', 'padding': '10px', 'font-size': '1.2rem'},
+                            className='search-dropdown'
+                        ),
+                
+                # Map and Bus Information Panel
+                dbc.Row(
+                    [
+                        dbc.Col(
+                            dcc.Graph(
+                                id='map',
+                                config={'scrollZoom': True}
                             ),
-                            html.Br(),
-                            html.Button("Send", id='chat-send', n_clicks=0, className="chat-send mt-2"),
-                            html.Div(id='chat-response', className='chat-response')
-                        ]
-                    )
+                            width=8
+                        ),
+                        dbc.Col(
+                            dbc.Card(
+                                dbc.CardBody(
+                                    [
+                                        html.H4('Upcoming Buses', className="card-title"),
+                                        html.Ul(id='bus-list', children=[])
+                                    ]
+                                ),
+                            ),
+                            width=4
+                        ),
+                    ],
+                    className="mb-4",
                 ),
-                width=12
-            )
+                
+                # Toggle button and collapsible slider/plot section (tap-in/out plots)
+                dbc.Button(
+                    "Toggle Tap-in/Out Data",
+                    id="collapse-button",
+                    color="primary",
+                    className="mb-3"
+                ),
+                dbc.Collapse(
+                    dbc.Row(
+                        [
+                            dbc.Col(
+                                dcc.Slider(
+                                    id='tap-in-out-slider',
+                                    min=0,
+                                    max=6,
+                                    step=1,
+                                    marks={
+                                        0: 'Weekday Tap-in',
+                                        1: 'Weekday Tap-out',
+                                        2: 'Weekday Comparison',
+                                        3: 'Tap-in (Wkday vs Wkend)',
+                                        4: 'Tap-out (Wkday vs Wkend)',
+                                        5: 'Heatmap',
+                                        6: 'Stacked Bar (Wkday)'
+                                    },
+                                    value=0
+                                ),
+                                width=12
+                            ),
+                            dbc.Col(
+                                dcc.Graph(
+                                    id='tap-in-out-plots'
+                                ),
+                                width=12
+                            )
+                        ],
+                        className="mt-4",
+                    ),
+                    id="slider-plot-section",
+                    is_open=False
+                ),
+                # Stores to track selections
+                dcc.Store(id='selected-bus', data=None),
+                dcc.Store(id='selected-stop', data=None),
+                dcc.Store(id='redis-data-store', data=None),
+
+                dcc.Store(id='filtered-buses', data=bus_services_df.to_dict('records')),
+                dcc.Interval(
+                    id='refresh-interval',
+                    interval=300000,  # 300,000 ms = 5 minutes
+                    n_intervals=0
+                ),
+
+                # Chatbot section
+                dbc.Row(
+                    dbc.Col(
+                        dbc.Card(
+                            dbc.CardBody(
+                                [
+                                    html.H4("Bus Info Assistant", className="card-title"),
+                                    dcc.Textarea(
+                                        id='chat-input',
+                                        placeholder='Ask about a bus stop...',
+                                        className='chat-input'
+                                    ),
+                                    html.Br(),
+                                    html.Button("Send", id='chat-send', n_clicks=0, className="chat-send mt-2"),
+                                    html.Div(id='chat-response', className='chat-response')
+                                ]
+                            )
+                        ),
+                        width=12
+                    )
+                )
+            ]
+        ),
+        html.Div(
+            id="tab-2-content",
+            children = [
+                # Map and Bus Information Panel
+                dbc.Row(
+                    [
+                        dbc.Col(
+                            dcc.Graph(
+                                id='map_tf',
+                                config={'scrollZoom': True}
+                            ),
+                            width=8
+                        ),
+                        dbc.Col(
+                            children = [
+                            dcc.Dropdown(
+                                id='camera-selector',
+                                options=[{'label': cam, 'value': cam} for cam in df['CameraID'].unique()],
+                                placeholder="Select a Camera ID",
+                                style={'marginBottom': '10px'}
+                            ),
+                            dbc.Card(
+                                dbc.CardBody(
+                                    [
+                                        html.H4('Choosen Traffic Image', className="card-title"),
+                                        html.Ul(id='traffic_image', children=[])
+                                    ]
+                                ),
+                            )],
+                            width=4
+                        ),
+                    ],
+                    className="mb-4",
+                ),
+            ]
         )
     ],
     fluid=True
 )
+
+@app.callback(
+    Output('tab-1-content', 'style'),
+    Output('tab-2-content', 'style'),
+    Input('tabs-example-1', 'value')
+)
+
+def switch_tabs(selected_tab):
+    if selected_tab == 'tab-1':
+        return {'display': 'block'}, {'display': 'none'}
+    elif selected_tab == 'tab-2':
+        return {'display': 'none'}, {'display': 'block'}
 
 # Callback to update the selected-stop store.
 @app.callback(
@@ -202,12 +267,13 @@ def update_selected_stop(map_click, dropdown_value, current_selected_stop):
     Input('refresh-interval', 'n_intervals')
 )
 def update_redis_data(n_intervals):
-    redis_conn = BaseHook.get_connection("redis_default")
-    r = redis.Redis(
-        host=redis_conn.host,
-        port=redis_conn.port,
-        decode_responses=True
-    )
+    # redis_conn = BaseHook.get_connection("redis_default")
+    # r = redis.Redis(
+    #     host=redis_conn.host,
+    #     port=redis_conn.port,
+    #     decode_responses=True
+    # )
+    r = redis.Redis(host="localhost", port=6379, decode_responses=True)
     items = r.lrange("bus_arrivals", 0, -1)
     return items
 
@@ -276,6 +342,69 @@ def update_map(selected_bus, selected_stop, filtered_buses_data):
         )
     }
     return figure
+
+@app.callback(
+    Output('map_tf', 'figure'),
+    Input('camera-selector', 'value')
+)
+def update_traffic_map(selected_camera_id):
+    marker_color = ['gray'] * len(df)
+    marker_size = [10] * len(df)
+    
+    # If user selects a CameraID, highlight it in blue
+    if selected_camera_id:
+        match_idx = df.index[df['CameraID'] == selected_camera_id].tolist()
+        if match_idx:
+            marker_color[match_idx[0]] = 'blue'
+            marker_size[match_idx[0]] = 14
+
+    figure = {
+        'data': [go.Scattermapbox(
+            lat=df['Latitude'],
+            lon=df['Longitude'],
+            mode='markers',
+            marker=dict(color=marker_color, size=marker_size),
+            text=df['CameraID'],
+            customdata=df['ImageLink'],
+            hovertemplate="<b>Camera ID:</b> %{text}<br><b>Image:</b> <a href='%{customdata}'>View</a><extra></extra>"
+        )],
+        'layout': go.Layout(
+            mapbox=dict(
+                style="carto-positron",
+                center={"lat": 1.3521, "lon": 103.8198},
+                zoom=11
+            ),
+            margin={"r": 0, "t": 0, "l": 0, "b": 0},
+            hovermode="closest"
+        )
+    }
+    return figure
+
+@app.callback(
+    Output('camera-selector', 'value'),
+    Input('map_tf', 'clickData'),
+    prevent_initial_call=True
+)
+def update_camera_dropdown_on_click(clickData):
+    if clickData and clickData['points']:
+        clicked_camera_id = clickData['points'][0]['text']
+        return clicked_camera_id
+    return dash.no_update
+
+@app.callback(
+    Output('traffic_image', 'children'),
+    Input('camera-selector', 'value')
+)
+def display_traffic_image(selected_camera_id):
+    if selected_camera_id is None:
+        return html.P("Please select a camera to view the image.")
+
+    camera_row = df[df['CameraID'] == selected_camera_id]
+    if camera_row.empty:
+        return html.P("No image found for the selected camera.")
+
+    image_url = camera_row.iloc[0]['ImageLink']
+    return html.Img(src=image_url, style={'width': '100%', 'borderRadius': '10px'})
 
 @app.callback(
     Output('slider-plot-section', 'is_open'),

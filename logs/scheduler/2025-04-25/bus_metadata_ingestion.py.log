@@ -1,0 +1,126 @@
+[2025-04-25T16:29:58.922+0000] {processor.py:186} INFO - Started process (PID=45) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:29:58.923+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:29:58.927+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:29:58.926+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:29:58.961+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:29:59.165+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:29:59.164+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:29:59.184+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:29:59.184+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:29:59.219+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.305 seconds
+[2025-04-25T16:30:29.440+0000] {processor.py:186} INFO - Started process (PID=111) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:30:29.441+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:30:29.443+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:30:29.443+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:30:29.462+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:30:29.483+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:30:29.483+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:30:29.497+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:30:29.497+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:30:29.513+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.078 seconds
+[2025-04-25T16:31:00.118+0000] {processor.py:186} INFO - Started process (PID=177) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:31:00.120+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:31:00.122+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:00.122+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:31:00.144+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:31:00.171+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:00.170+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:31:00.189+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:00.188+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:31:00.214+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.104 seconds
+[2025-04-25T16:31:30.490+0000] {processor.py:186} INFO - Started process (PID=243) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:31:30.492+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:31:30.496+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:30.495+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:31:30.518+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:31:30.543+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:30.542+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:31:30.556+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:31:30.556+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:31:30.576+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.093 seconds
+[2025-04-25T16:32:00.727+0000] {processor.py:186} INFO - Started process (PID=309) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:32:00.727+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:32:00.729+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:00.729+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:32:00.748+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:32:00.768+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:00.768+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:32:00.781+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:00.781+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:32:00.799+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.077 seconds
+[2025-04-25T16:32:31.438+0000] {processor.py:186} INFO - Started process (PID=375) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:32:31.439+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:32:31.442+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:31.442+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:32:31.465+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:32:31.493+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:31.492+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:32:31.509+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:32:31.508+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:32:31.531+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.101 seconds
+[2025-04-25T16:33:02.609+0000] {processor.py:186} INFO - Started process (PID=441) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:33:02.610+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:33:02.612+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:02.612+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:33:02.635+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:33:02.662+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:02.662+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:33:02.682+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:02.682+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:33:02.711+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.110 seconds
+[2025-04-25T16:33:33.709+0000] {processor.py:186} INFO - Started process (PID=507) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:33:33.710+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:33:33.712+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:33.711+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:33:33.730+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:33:33.751+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:33.750+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:33:33.764+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:33:33.764+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:33:33.783+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.080 seconds
+[2025-04-25T16:34:04.575+0000] {processor.py:186} INFO - Started process (PID=573) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:34:04.577+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:34:04.579+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:04.579+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:34:04.601+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:34:04.622+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:04.622+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:34:04.637+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:04.636+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:34:04.658+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.089 seconds
+[2025-04-25T16:34:35.121+0000] {processor.py:186} INFO - Started process (PID=639) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:34:35.122+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:34:35.125+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:35.124+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:34:35.145+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:34:35.168+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:35.167+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:34:35.181+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:34:35.181+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:34:35.203+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.088 seconds
+[2025-04-25T16:35:05.603+0000] {processor.py:186} INFO - Started process (PID=705) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:35:05.604+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:35:05.607+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:05.606+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:35:05.628+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:35:05.650+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:05.650+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:35:05.667+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:05.667+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:35:05.691+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.094 seconds
+[2025-04-25T16:35:36.316+0000] {processor.py:186} INFO - Started process (PID=783) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:35:36.319+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:35:36.325+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:36.324+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:35:36.360+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:35:36.400+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:36.399+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:35:36.419+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:35:36.418+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:35:36.447+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.141 seconds
+[2025-04-25T16:36:06.896+0000] {processor.py:186} INFO - Started process (PID=849) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:36:06.897+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:36:06.899+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:06.899+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:36:06.918+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:36:06.939+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:06.939+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:36:06.953+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:06.952+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:36:06.975+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.085 seconds
+[2025-04-25T16:36:37.983+0000] {processor.py:186} INFO - Started process (PID=915) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:36:37.984+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:36:37.986+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:37.986+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:36:38.012+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:36:38.039+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:38.038+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:36:38.055+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:36:38.055+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:36:38.081+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.106 seconds
+[2025-04-25T16:37:08.523+0000] {processor.py:186} INFO - Started process (PID=981) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:37:08.524+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:37:08.526+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:08.525+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:37:08.544+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:37:08.565+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:08.564+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:37:08.578+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:08.577+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:37:08.594+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.077 seconds
+[2025-04-25T16:37:39.496+0000] {processor.py:186} INFO - Started process (PID=1047) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:37:39.497+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:37:39.499+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:39.499+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:37:39.517+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:37:39.538+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:39.538+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:37:39.550+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:37:39.550+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:37:39.568+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.078 seconds
+[2025-04-25T16:38:10.096+0000] {processor.py:186} INFO - Started process (PID=1113) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:38:10.097+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:38:10.099+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:10.099+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:38:10.118+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:38:10.143+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:10.142+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:38:10.158+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:10.157+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:38:10.179+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.088 seconds
+[2025-04-25T16:38:40.326+0000] {processor.py:186} INFO - Started process (PID=1179) to work on /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:38:40.327+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/bus_metadata_ingestion.py for tasks to queue
+[2025-04-25T16:38:40.329+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:40.329+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:38:40.348+0000] {processor.py:925} INFO - DAG(s) 'bus_metadata_ingestion' retrieved from /opt/airflow/dags/bus_metadata_ingestion.py
+[2025-04-25T16:38:40.371+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:40.370+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-25T16:38:40.385+0000] {logging_mixin.py:190} INFO - [2025-04-25T16:38:40.385+0000] {dag.py:4180} INFO - Setting next_dagrun for bus_metadata_ingestion to None, run_after=None
+[2025-04-25T16:38:40.405+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/bus_metadata_ingestion.py took 0.084 seconds

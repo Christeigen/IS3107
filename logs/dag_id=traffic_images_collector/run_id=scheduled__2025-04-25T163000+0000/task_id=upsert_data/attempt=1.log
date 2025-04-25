@@ -1,0 +1,26 @@
+[2025-04-25T16:35:21.952+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-25T16:35:21.980+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_images_collector.upsert_data scheduled__2025-04-25T16:30:00+00:00 [queued]>
+[2025-04-25T16:35:21.994+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_images_collector.upsert_data scheduled__2025-04-25T16:30:00+00:00 [queued]>
+[2025-04-25T16:35:21.995+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2025-04-25T16:35:22.016+0000] {taskinstance.py:2890} INFO - Executing <Task(_PythonDecoratedOperator): upsert_data> on 2025-04-25 16:30:00+00:00
+[2025-04-25T16:35:22.029+0000] {standard_task_runner.py:72} INFO - Started process 153 to run task
+[2025-04-25T16:35:22.033+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'traffic_images_collector', 'upsert_data', 'scheduled__2025-04-25T16:30:00+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/traffic_images_collector.py', '--cfg-path', '/tmp/tmpkb4i46rz']
+[2025-04-25T16:35:22.036+0000] {standard_task_runner.py:105} INFO - Job 28: Subtask upsert_data
+[2025-04-25T16:35:22.524+0000] {task_command.py:467} INFO - Running <TaskInstance: traffic_images_collector.upsert_data scheduled__2025-04-25T16:30:00+00:00 [running]> on host 59b5c23bc6da
+[2025-04-25T16:35:22.692+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_images_collector' AIRFLOW_CTX_TASK_ID='upsert_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-25T16:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-25T16:30:00+00:00'
+[2025-04-25T16:35:22.695+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-25T16:35:22.697+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-25T16:35:22.699+0000] {logging_mixin.py:190} INFO - Current task name:upsert_data state:running start_date:2025-04-25 16:35:21.982407+00:00
+[2025-04-25T16:35:22.700+0000] {logging_mixin.py:190} INFO - Dag name:traffic_images_collector and current dag run status:running
+[2025-04-25T16:35:22.702+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-25T16:35:22.727+0000] {base.py:84} INFO - Retrieving connection 'lta_api_connection'
+[2025-04-25T16:35:23.433+0000] {_client.py:1026} INFO - HTTP Request: POST https://vcyztregkuonlsqmljtt.supabase.co/rest/v1/TrafficImages?columns=%22CameraID%22%2C%22ImageLink%22%2C%22Longitude%22%2C%22Latitude%22 "HTTP/2 200 OK"
+[2025-04-25T16:35:23.444+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-25T16:35:23.455+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-25T16:35:23.456+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=traffic_images_collector, task_id=upsert_data, run_id=scheduled__2025-04-25T16:30:00+00:00, execution_date=20250425T163000, start_date=20250425T163521, end_date=20250425T163523
+[2025-04-25T16:35:23.481+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-04-25T16:35:23.482+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-04-25T16:35:23.483+0000] {logging_mixin.py:190} INFO - Dag name:traffic_images_collector queued_at:2025-04-25 16:35:11.183970+00:00
+[2025-04-25T16:35:23.484+0000] {logging_mixin.py:190} INFO - Task hostname:59b5c23bc6da operator:_PythonDecoratedOperator
+[2025-04-25T16:35:23.534+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-25T16:35:23.546+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
