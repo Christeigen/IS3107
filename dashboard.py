@@ -5,9 +5,6 @@ import plotly.graph_objects as go
 import pandas as pd
 import json
 import os
-import requests
-from PIL import Image
-from io import BytesIO
 
 import sqlite3
 from dash.dependencies import MATCH, ALL, State, Output, Input
@@ -21,8 +18,6 @@ from datetime import datetime, timezone
 from pydantic import BaseModel
 from pydantic_ai import Agent
 from supabase import create_client
-from ultralytics import YOLO
-from collections import Counter
 
 import dateutil.parser  # Handy for parsing ISO strings with offsets
 
@@ -52,9 +47,6 @@ all_redis_items = r.lrange("bus_arrivals", 0, -1)
 # Create dropdown options using bus stop description and code
 bus_stops_list = [{'label': row['Description'], 'value': row['BusStopCode']} for _, row in bus_stops_df.iterrows()]
 
-# Load YOLO model
-model = YOLO("yolov8n.pt")
-
 conn.close()
 
 # Initialize the Dash app
@@ -70,6 +62,7 @@ app.layout = dbc.Container(
                 dcc.Tabs(id='tabs-example-1', value='tab-1', children=[
                     dcc.Tab(label='Bus Route', value='tab-1'),
                     dcc.Tab(label='Traffic Condition', value='tab-2'),
+                    dcc.Tab(label='Monthly Taxi Fleet', value='tab-3'),
                 ])
             ],
             className="title-search-container"
@@ -215,8 +208,7 @@ app.layout = dbc.Container(
                                 dbc.CardBody(
                                     [
                                         html.H4('Choosen Traffic Image', className="card-title"),
-                                        html.Ul(id='traffic_image', children=[]),
-                                        html.Ul(id='vehicle info', children=[])
+                                        html.Ul(id='traffic_image', children=[])
                                     ]
                                 ),
                             )],
@@ -226,7 +218,53 @@ app.layout = dbc.Container(
                     className="mb-4",
                 ),
             ]
-        )
+        ),
+        html.Div(
+            id='tab-3-content',
+            children=[
+                html.H2(
+                    "Monthly Taxi Fleet Forecasting",
+                    className="text-center mb-4",
+                    style={
+                        'fontSize': '32px',
+                        'fontWeight': 'bold',
+                        'color': '#003366'  # dark blue
+                    }
+                ),
+
+                html.Div([
+                    html.H4(
+                        "Model Performance (Train/Test Split)",
+                        className="text-center",
+                        style={
+                            'fontSize': '24px',
+                            'fontWeight': '600'
+                        }
+                    ),
+                    html.Img(
+                        src='/assets/taxi_forecast_model_performance.png',
+                        style={'width': '80%', 'margin': 'auto', 'display': 'block', 'borderRadius': '10px'}
+                    ),
+                ], className="mb-5"),
+
+                html.Div([
+                    html.H4(
+                        "Forecast Until 2030",
+                        className="text-center",
+                        style={
+                            'fontSize': '24px',
+                            'fontWeight': '600'
+                        }
+                    ),
+                    html.Img(
+                        src='/assets/taxi_forecast_until_2030.png',
+                        style={'width': '80%', 'margin': 'auto', 'display': 'block', 'borderRadius': '10px'}
+                    ),
+                ])
+
+            ],
+            style={'display': 'none'}  # initially hidden
+        ),
     ],
     fluid=True
 )
@@ -234,14 +272,17 @@ app.layout = dbc.Container(
 @app.callback(
     Output('tab-1-content', 'style'),
     Output('tab-2-content', 'style'),
+    Output('tab-3-content', 'style'),
     Input('tabs-example-1', 'value')
 )
 
 def switch_tabs(selected_tab):
     if selected_tab == 'tab-1':
-        return {'display': 'block'}, {'display': 'none'}
+        return {'display': 'block'}, {'display': 'none'}, {'display': 'none'}
     elif selected_tab == 'tab-2':
-        return {'display': 'none'}, {'display': 'block'}
+        return {'display': 'none'}, {'display': 'block'}, {'display': 'none'}
+    elif selected_tab == 'tab-3':
+        return {'display': 'none'}, {'display': 'none'}, {'display': 'block'}
 
 # Callback to update the selected-stop store.
 @app.callback(
@@ -401,42 +442,19 @@ def update_camera_dropdown_on_click(clickData):
     return dash.no_update
 
 @app.callback(
-    [Output('traffic_image', 'children'),
-    Output('vehicle info', 'children')],
+    Output('traffic_image', 'children'),
     Input('camera-selector', 'value')
 )
 def display_traffic_image(selected_camera_id):
     if selected_camera_id is None:
-        return html.P("Please select a camera to view the image."), html.P("")
+        return html.P("Please select a camera to view the image.")
 
     camera_row = df[df['CameraID'] == selected_camera_id]
     if camera_row.empty:
-        return html.P("No image found for the selected camera."), html.P("")
+        return html.P("No image found for the selected camera.")
 
     image_url = camera_row.iloc[0]['ImageLink']
-    vehicle_classes = ['car', 'motorcycle', 'bus', 'truck', "bicycle"]
-    response = requests.get(image_url)
-    img = Image.open(BytesIO(response.content))
-    result = model(img)
-    boxes = result[0].boxes
-    class_ids = boxes.cls.cpu().numpy().astype(int)
-    names = model.names
-    
-    vehicle_counts = Counter()
-    for cls_id in class_ids:
-        class_name = names[cls_id]
-        if class_name in vehicle_classes:
-            vehicle_counts[class_name] += 1
-
-    total_vehicle = sum(vehicle_counts.values()) if len(vehicle_counts) != 0 else 0
-    vehicle_info = html.Div([
-        html.P("Vehicle Info:"),
-        html.Ul([
-            html.Li(f"{key}: {value}") for key, value in vehicle_counts.items()
-        ]),
-        html.P(f"Total vehicle on the road: {total_vehicle}")
-    ])
-    return html.Img(src=image_url, style={'width': '100%', 'borderRadius': '10px'}), vehicle_info
+    return html.Img(src=image_url, style={'width': '100%', 'borderRadius': '10px'})
 
 @app.callback(
     Output('slider-plot-section', 'is_open'),
@@ -596,7 +614,7 @@ def update_tap_in_out_plots(clickData, slider_value):
     except Exception as e:
         return go.Figure(layout={'title': f'Error extracting bus stop info: {e}'})
     
-    conn = sqlite3.connect('bus.db')
+    conn = sqlite3.connect('/home/houss/airflow/bus.db')
     query = "SELECT * FROM PassengerVolume WHERE BusStopCode = ?"
     df = pd.read_sql_query(query, conn, params=(bus_stop_code,))
     conn.close()
