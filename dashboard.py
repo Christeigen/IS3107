@@ -5,6 +5,8 @@ import plotly.graph_objects as go
 import pandas as pd
 import json
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 import sqlite3
 from dash.dependencies import MATCH, ALL, State, Output, Input
@@ -22,10 +24,10 @@ from supabase import create_client
 import dateutil.parser  # Handy for parsing ISO strings with offsets
 
 
-# Set your API key (consider using an environment variable for production)
-API_KEY= "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"
-SUPABASE_URL= "https://vcyztregkuonlsqmljtt.supabase.co"
-SUPABASE_KEY= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjeXp0cmVna3VvbmxzcW1sanR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0ODIzMDUsImV4cCI6MjA2MTA1ODMwNX0.-0rQ-tyXS8t_4n3sBMibc5VAcEvMIbnqmTeilbWDEKc"
+# Set your API key and credentials
+API_KEY= os.environ.get("OPENAI_KEY")
+SUPABASE_URL= os.environ.get("SUPABASE_URL")
+SUPABASE_KEY= os.environ.get("SUPABASE_KEY")
 
 conn = sqlite3.connect('bus.db')
 
