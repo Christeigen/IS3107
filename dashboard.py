@@ -4,6 +4,9 @@ import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 import pandas as pd
 import json
+import requests
+from PIL import Image
+from io import BytesIO
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -20,6 +23,8 @@ from datetime import datetime, timezone
 from pydantic import BaseModel
 from pydantic_ai import Agent
 from supabase import create_client
+from ultralytics import YOLO
+from collections import Counter
 
 import dateutil.parser  # Handy for parsing ISO strings with offsets
 
@@ -40,6 +45,9 @@ bus_routes_df = pd.read_sql_query("SELECT * FROM BusRoute", conn)
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 df = supabase.table("TrafficImages").select("*").execute()
 df = pd.DataFrame(df.data)
+
+# Load YOLO model
+model = YOLO("yolov8n.pt")
 
 # Connect to Redis and get upcoming bus arrivals
 # redis_conn = BaseHook.get_connection("redis_default")
@@ -210,7 +218,8 @@ app.layout = dbc.Container(
                                 dbc.CardBody(
                                     [
                                         html.H4('Choosen Traffic Image', className="card-title"),
-                                        html.Ul(id='traffic_image', children=[])
+                                        html.Ul(id='traffic_image', children=[]),
+                                        html.Ul(id='vehicle info', children=[])
                                     ]
                                 ),
                             )],
@@ -444,19 +453,42 @@ def update_camera_dropdown_on_click(clickData):
     return dash.no_update
 
 @app.callback(
-    Output('traffic_image', 'children'),
+    [Output('traffic_image', 'children'),
+    Output('vehicle info', 'children')],
     Input('camera-selector', 'value')
 )
 def display_traffic_image(selected_camera_id):
     if selected_camera_id is None:
-        return html.P("Please select a camera to view the image.")
+        return html.P("Please select a camera to view the image."), html.P("")
 
     camera_row = df[df['CameraID'] == selected_camera_id]
     if camera_row.empty:
-        return html.P("No image found for the selected camera.")
+        return html.P("No image found for the selected camera."), html.P("")
 
     image_url = camera_row.iloc[0]['ImageLink']
-    return html.Img(src=image_url, style={'width': '100%', 'borderRadius': '10px'})
+    vehicle_classes = ['car', 'motorcycle', 'bus', 'truck', "bicycle"]
+    response = requests.get(image_url)
+    img = Image.open(BytesIO(response.content))
+    result = model(img)
+    boxes = result[0].boxes
+    class_ids = boxes.cls.cpu().numpy().astype(int)
+    names = model.names
+    
+    vehicle_counts = Counter()
+    for cls_id in class_ids:
+        class_name = names[cls_id]
+        if class_name in vehicle_classes:
+            vehicle_counts[class_name] += 1
+
+    total_vehicle = sum(vehicle_counts.values()) if len(vehicle_counts) != 0 else 0
+    vehicle_info = html.Div([
+        html.P("Vehicle Info:"),
+        html.Ul([
+            html.Li(f"{key}: {value}") for key, value in vehicle_counts.items()
+        ]),
+        html.P(f"Total vehicle on the road: {total_vehicle}")
+    ])
+    return html.Img(src=image_url, style={'width': '100%', 'borderRadius': '10px'}), vehicle_info
 
 @app.callback(
     Output('slider-plot-section', 'is_open'),
